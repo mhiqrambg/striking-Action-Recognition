@@ -1,0 +1,37 @@
+model:
+  input_dim: 38
+  dim_model: 128
+  num_heads: 8
+  num_layers: 4
+  ffn_dim: 256
+  dropout: 0.1
+  num_classes: 3
+  use_learnable_pe: true
+  use_focal_loss: true
+
+data:
+  window_size: 30
+  stride: 15
+  batch_size: 16
+  val_split: 0.2
+  random_seed: 42
+  num_workers: 0
+  num_folds: 5
+
+training:
+  learning_rate: 0.0001
+  weight_decay: 0.01
+  epochs: 50
+  log_dir: "runs"
+  focal_gamma: 2.0
+  focal_alpha: [0.25, 0.40, 0.35]
+
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  skeleton_dir: "data/with_skeleton"
+  yolo_model_path: "models/yolo11n-pose.pt"
+  checkpoint_path: "models/fatigue_transformer.pt"
+  results_dir: "results"
+
+class_names: ["normal", "light", "heavy"]
