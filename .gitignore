@@ -46,6 +46,7 @@ yarn-error.log*
 
 # ==== Superpowers / tooling ====
 .superpowers/
+docs/PROPOSAL THESIS b5.docx
 
 # ==== OS / Editor ====
 .DS_Store
